@@ -32,7 +32,7 @@ $(document).ready(function() {
     console.log(newTrain.firstTrainTime);
     console.log(newTrain.frequency);
     
-    // Clears all of the text-boxes
+    // Clear all of the text-boxes
     $("#train-name-input").val("");
     $("#dest-input").val("");
     $("#first-train-time-input").val("");
@@ -45,7 +45,7 @@ $(document).ready(function() {
     var tName = childSnapshot.val().name;
     var tDest = childSnapshot.val().destination;
     var tFirst = childSnapshot.val().firstTrainTime;
-    var tFreq = childSnapshot.val().frequency;
+    var tFreq = moment(childSnapshot.val().frequency, "HH:mm").format("HH:mm");
     // console log of the train info
     console.log(tName);
     console.log(tDest);
@@ -53,8 +53,9 @@ $(document).ready(function() {
     console.log(tFreq);
     // set the current time
     var now = moment();
-    var minAway = tFreq - now;
-    // Prettify the firstTrainTime
+    // subtract current 
+    var minAway = tFreq.diff(now, 'minutes');
+    // Format the firstTrainTime
     var tFirstPretty = moment.unix(tFirst).format("mm");
     // write train info to html table
     $("#train-table > tbody").append("<tr><td>" + tName + "</td><td>" + tDest + "</td><td>" +
