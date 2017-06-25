@@ -1,0 +1,41 @@
+body {
+	background-image: url("../images/passTrain.jpg");
+	background-position: center;
+}
+
+.jumbotron {
+	color: white;
+	background-color: rgba(22, 22, 22, .8);
+	margin-top: 20px;
+}
+
+#jtronCustom {
+	border: 1px solid #ddd;
+}
+
+#mainT {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+#subT {
+	font-family: 'Bubbler One', sans-serif;
+	font-size: 26px;
+}
+
+form {
+	margin: 10px;
+}
+
+.panel {
+	background-color: rgba(255, 255, 255, .8);
+}
+
+.panel-primary > .panel-heading {
+	background-color: rgba(221, 22, 22, 1);
+	color: white;
+}
+
+#add-train-btn {
+	background-color: rgba(221, 22, 22, 1);
+	border-color: #ddd;
+}
