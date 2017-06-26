@@ -45,16 +45,17 @@ $(document).ready(function() {
     var tName = childSnapshot.val().name;
     var tDest = childSnapshot.val().destination;
     var tFirst = childSnapshot.val().firstTrainTime;
-    var tFreq = moment(childSnapshot.val().frequency, "HH:mm").format("HH:mm");
+    var tFreq = childSnapshot.val().frequency;
+    // var tFreq = moment(childSnapshot.val().frequency, "HH:mm").format("HH:mm");
     // console log of the train info
     console.log(tName);
     console.log(tDest);
     console.log(tFirst);
     console.log(tFreq);
-    // set the current time
+    // set the current time and subtract the frequency to get minutes away.
     var now = moment();
-    // subtract current 
-    var minAway = tFreq.diff(now, 'minutes');
+    var minAway = tFreq - now;
+    // var minAway = tFreq.diff(now, 'minutes');
     // Format the firstTrainTime
     var tFirstPretty = moment.unix(tFirst).format("mm");
     // write train info to html table
